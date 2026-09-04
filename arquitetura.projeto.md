@@ -9,6 +9,7 @@
 4. O tratamento global de exceções transforma erros de domínio em respostas da API.
 
 
+
 **Model e POO**
 
 Conteudo é a abstração principal. Filme, Serie e Documentario são especializações. Promocionavel
