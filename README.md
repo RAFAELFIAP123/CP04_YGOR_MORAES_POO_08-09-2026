@@ -1,10 +1,10 @@
-Checkpoint 04 - 08/09/2026
+**Checkpoint 04 - 08/09/2026**
 
-Sala: 2CCPG
+**Sala**: 2CCPG
 
 Professor: Ygor Moraes Martins dos Anjos
 
-Integrantes:
+**Integrantes:**
 
 Bruno Otávio da Cruz Carvalho - RM562354
 
