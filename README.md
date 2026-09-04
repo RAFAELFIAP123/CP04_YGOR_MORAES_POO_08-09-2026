@@ -1,4 +1,3 @@
-```
 Integrantes:
 
 Bruno Otávio da Cruz Carvalho - RM562354
