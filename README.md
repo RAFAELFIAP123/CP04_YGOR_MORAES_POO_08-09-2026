@@ -18,6 +18,3 @@ Rafael Louzã Lopes - RM564963
 
 
 
-**Proposta:**
-
-O Checkpoint 4 — Bug Hunt StreamFIAP pede que a equipe assuma uma API Spring Boot existente, encontre divergências entre o comportamento do código e o contrato oficial da API, corrija os problemas com mudanças mínimas e documente as decisões
