@@ -38,7 +38,7 @@
 | clean02 | Campos de repository nos três controllers | A injeção por campo com `@Autowired` escondia dependências e dificultava testes isolados. | Os repositories passaram a ser campos `final` recebidos por construtores explícitos. |
 | clean03 | Método `Usuario.alugar()` | Os nomes `c` e `p` não comunicavam o papel das variáveis na regra de aluguel. | Renomeados para `conteudo` e `precoAluguel`, preservando todo o comportamento. |
 | clean04 | `ConteudoController.listarPorCategoria()` | O controller buscava todos os registros e executava uma filtragem manual, duplicando uma responsabilidade do repository. | A consulta passou a chamar diretamente `conteudoRepository.findByCategoria(categoria)`. |
-| clean05 | | | |
+| clean05 | Método privado `calcularDescontoAntigo()` em `ConteudoController` | O método não possuía chamadas e mantinha uma regra antiga fora do contrato atual. | Removidos o método morto e seu comentário explicativo. |
 | clean06 | | | |
 
 ---
