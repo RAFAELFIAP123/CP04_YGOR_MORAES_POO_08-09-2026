@@ -28,7 +28,7 @@
 | bug09 | Um conteúdo com categoria `FICCAO` não foi retornado ao buscar pelo mesmo texto. | `ConteudoController.java`: categorias eram comparadas com `==`, que compara referências de objetos. | Substituída a condição por `categoria.equals(c.getCategoria())`. | Comparação de objetos, igualdade de Strings e coleções. |
 | bug10 | Um usuário abaixo da classificação recebia erro genérico da API, sem a mensagem da regra. | `ClassificacaoIndicativaException` era checked e não possuía tratamento no `GlobalExceptionHandler`. | Alterada para `RuntimeException` e criado handler HTTP 403 que devolve a mensagem original. | Exceções checked e unchecked e tratamento global. |
 | bug11 | Usuário com R$ 100,00 foi considerado sem saldo para pagar R$ 14,90, enquanto usuário com R$ 0,00 foi aceito. | `Usuario.java`: `temCreditosSuficientes` comparava `preco >= creditos`, invertendo a regra. | Corrigida a condição para `this.creditos >= preco`. | Regra de negócio, operadores relacionais e estado do objeto. |
-| bug12 | | | | |
+| bug12 | Um filme indisponível foi alugado e reduziu os créditos de R$ 100,00 para R$ 90,10. | `Usuario.java`: o método `alugar` não verificava `Conteudo.isDisponivel()`. | Adicionada validação inicial que lança `ConteudoIndisponivelException` antes de qualquer débito. | Regra de negócio, exceções e preservação de estado. |
 
 ## Parte 2 — Ajustes de Clean Code
 
