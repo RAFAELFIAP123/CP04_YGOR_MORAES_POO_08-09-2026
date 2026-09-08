@@ -11,6 +11,8 @@
 |Rafael Quatter Dalla Costa | RM562052| |
 |Rafael Louzã Lopes | RM564963| |
 
+
+
 ## Parte 1 — Bugs encontrados
 
 | # | Sintoma observado (o que fiz/vi) | Causa raiz (arquivo e linha aproximada) | Correção aplicada | Conceito da disciplina |
