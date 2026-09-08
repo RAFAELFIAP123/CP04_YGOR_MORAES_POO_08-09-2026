@@ -17,7 +17,7 @@
 
 | # | Sintoma observado (o que fiz/vi) | Causa raiz (arquivo e linha aproximada) | Correção aplicada | Conceito da disciplina |
 |---|---|---|---|---|
-| bug01 | | | | |
+| bug01 | Um filme de estreia com preço normal de R$ 14,90 retornou R$ 17,88 na promoção, em vez de R$ 11,92. | `Filme.java`, método `aplicarPromocao`: o preço era multiplicado por `1.2`, aumentando 20%. | Alterado o multiplicador para `0.8`, aplicando corretamente 20% de desconto. | Interface, sobrescrita de método e regra de negócio. |
 | bug02 | | | | |
 | bug03 | | | | |
 | bug04 | | | | |
