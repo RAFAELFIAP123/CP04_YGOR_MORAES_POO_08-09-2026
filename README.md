@@ -18,7 +18,7 @@
 | # | Sintoma observado (o que fiz/vi) | Causa raiz (arquivo e linha aproximada) | Correção aplicada | Conceito da disciplina |
 |---|---|---|---|---|
 | bug01 | Um filme de estreia com preço normal de R$ 14,90 retornou R$ 17,88 na promoção, em vez de R$ 11,92. | `Filme.java`, método `aplicarPromocao`: o preço era multiplicado por `1.2`, aumentando 20%. | Alterado o multiplicador para `0.8`, aplicando corretamente 20% de desconto. | Interface, sobrescrita de método e regra de negócio. |
-| bug02 | | | | |
+| bug02 | Ao criar a série Dark, título e categoria ficaram nulos; duração e classificação ficaram zeradas. | `Serie.java`, construtor: apenas `numeroTemporadas` era atribuído e o construtor da classe pai não era chamado. | Adicionada a chamada `super(...)` e o parâmetro de disponibilidade foi preservado no cadastro. | Herança, construtores e inicialização de objetos. |
 | bug03 | | | | |
 | bug04 | | | | |
 | bug05 | | | | |
