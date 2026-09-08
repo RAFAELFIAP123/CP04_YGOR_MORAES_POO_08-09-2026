@@ -24,7 +24,7 @@
 | bug05 | Ao cadastrar um usuário, o ID não era gerado automaticamente. | `Usuario.java`: o campo `id` possuía `@Id`, mas não tinha estratégia de geração configurada. | Adicionada `@GeneratedValue(strategy = GenerationType.IDENTITY)`. | Persistência JPA, chave primária e geração de identidade. |
 | bug06 | Um usuário criado com o nome Rafael retornou `nome=null`. | `Usuario.java`, construtor: `nome = nome` atribuía o parâmetro a ele mesmo. | Alterada a atribuição para `this.nome = nome`. | Construtores, estado do objeto e uso de `this`. |
 | bug07 | Filmes com duração `0` e `-20` foram criados normalmente. | `Conteudo.java`: construtor e setter não validavam `duracaoMinutos`. | Centralizada no setter a rejeição de valores `<= 0`; o construtor passou a usar o setter e a API retorna HTTP 400 com mensagem clara. | Encapsulamento, validação de estado e exceções. |
-| bug08 | | | | |
+| bug08 | A busca pelo conteúdo 999 retornou `null`, como se fosse uma resposta válida. | `ConteudoController.java`: um `catch (Exception)` vazio engolia `ConteudoNaoEncontradoException`. | Removido o `try/catch` vazio e a exceção passou a ser propagada ao handler global, que responde HTTP 404. | Exceções, propagação de erros e responsabilidade do controller. |
 | bug09 | | | | |
 | bug10 | | | | |
 | bug11 | | | | |
