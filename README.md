@@ -92,6 +92,14 @@ Um dos bugs compilava sem nenhum erro: o método da `Serie` parecia sobrescrever
 `calcularPrecoAluguel`, mas na verdade sobrecarregava. Explique a diferença entre
 override e overload nesse caso e por que a anotação `@Override` teria impedido o bug.
 
+Sobrescrita acontece quando a classe filha redefine um método herdado mantendo nome, parâmetros e tipo de retorno compatível.
+Sobrecarga acontece quando existem métodos com o mesmo nome, mas com listas de parâmetros diferentes.
+`Conteudo` define `calcularPrecoAluguel()`, enquanto a versão com parâmetro que existia em `Serie` era apenas uma sobrecarga.
+Por isso o código compilava, mas as chamadas sem argumentos continuavam executando o método herdado e retornando R$ 9,90.
+A correção removeu o parâmetro e fez `Serie.calcularPrecoAluguel()` retornar R$ 4,90 por temporada.
+Com a sobrescrita, o Java escolhe esse cálculo em tempo de execução mesmo quando a variável está declarada como `Conteudo`.
+Se a assinatura errada tivesse `@Override`, o compilador avisaria que nenhum método da classe pai estava sendo sobrescrito.
+
 ### 5. Onde blindar o objeto? (Aulas 3, 4 e 13)
 Vimos bugs de dados inválidos aceitos (duração negativa, créditos negativos, campos
 nulos). Em quais lugares (construtor, setter, método do model) cada tipo de validação
