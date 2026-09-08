@@ -6,7 +6,7 @@
 **Turma** 2CCPG
 
 | Integrante | RM | Turma |
-|Bruno Otávio da Cruz Carvalho|---|---|
+|---|---|---|
 | | | |
 | | | |
 | | | |
