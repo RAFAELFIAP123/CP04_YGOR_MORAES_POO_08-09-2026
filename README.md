@@ -35,7 +35,7 @@
 | # | Onde estava | Qual princípio/boas práticas era violado | O que eu mudei |
 |---|---|---|---|
 | clean01 | `Conteudo.duracaoMinutos` e seus acessos no controller | O atributo público quebrava o encapsulamento e permitia acesso direto ao estado interno. | O atributo passou a ser privado e o controller passou a usar `getDuracaoMinutos()`. |
-| clean02 | | | |
+| clean02 | Campos de repository nos três controllers | A injeção por campo com `@Autowired` escondia dependências e dificultava testes isolados. | Os repositories passaram a ser campos `final` recebidos por construtores explícitos. |
 | clean03 | | | |
 | clean04 | | | |
 | clean05 | | | |
