@@ -26,7 +26,7 @@
 | bug07 | Filmes com duração `0` e `-20` foram criados normalmente. | `Conteudo.java`: construtor e setter não validavam `duracaoMinutos`. | Centralizada no setter a rejeição de valores `<= 0`; o construtor passou a usar o setter e a API retorna HTTP 400 com mensagem clara. | Encapsulamento, validação de estado e exceções. |
 | bug08 | A busca pelo conteúdo 999 retornou `null`, como se fosse uma resposta válida. | `ConteudoController.java`: um `catch (Exception)` vazio engolia `ConteudoNaoEncontradoException`. | Removido o `try/catch` vazio e a exceção passou a ser propagada ao handler global, que responde HTTP 404. | Exceções, propagação de erros e responsabilidade do controller. |
 | bug09 | Um conteúdo com categoria `FICCAO` não foi retornado ao buscar pelo mesmo texto. | `ConteudoController.java`: categorias eram comparadas com `==`, que compara referências de objetos. | Substituída a condição por `categoria.equals(c.getCategoria())`. | Comparação de objetos, igualdade de Strings e coleções. |
-| bug10 | | | | |
+| bug10 | Um usuário abaixo da classificação recebia erro genérico da API, sem a mensagem da regra. | `ClassificacaoIndicativaException` era checked e não possuía tratamento no `GlobalExceptionHandler`. | Alterada para `RuntimeException` e criado handler HTTP 403 que devolve a mensagem original. | Exceções checked e unchecked e tratamento global. |
 | bug11 | | | | |
 | bug12 | | | | |
 
