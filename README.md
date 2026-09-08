@@ -5,11 +5,11 @@
 
 | Integrante | RM | 
 |---|---|
-|Bruno Otávio da Cruz Carvalho | RM562354| |
-| Letícia Gabrielle Andrade Temóteo | RM563985| |
-| João Vitor Santana Silva Ribeiro| RM564693| |
-|Rafael Quatter Dalla Costa | RM562052| |
-|Rafael Louzã Lopes | RM564963| |
+| Bruno Otávio da Cruz Carvalho | RM562354 |
+| Letícia Gabrielle Andrade Temóteo | RM563985 |
+| João Vitor Santana Silva Ribeiro | RM564693 |
+| Rafael Quatter Dalla Costa | RM562052 |
+| Rafael Louzã Lopes | RM564963 |
 
 
 
@@ -130,7 +130,3 @@ Controllers, repositories e `Usuario` também permaneceriam intactos, pois traba
 Como o documentário atualmente é gratuito, um desconto de 20% sobre R$ 0,00 só teria efeito se seu preço-base também mudasse.
 Isso mostra um design extensível: uma nova capacidade pode ser adicionada com mudanças concentradas na classe interessada.
 
----
-
-
-```
