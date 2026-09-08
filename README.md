@@ -79,6 +79,14 @@ sem mensagem útil para o cliente. Explique a diferença entre `extends Exceptio
 `extends RuntimeException` no contexto desse bug, e como você fez a mensagem da
 regra (classificação indicativa) chegar de forma clara ao cliente da API.
 
+Uma exceção que estende `Exception` é checked, então o compilador exige que ela seja tratada ou declarada com `throws`.
+Quando ela estende `RuntimeException`, torna-se unchecked e pode atravessar as camadas sem obrigar cada método a capturá-la.
+Nesse projeto, a classificação indicativa representa uma violação de regra de negócio durante o aluguel.
+Por isso, `ClassificacaoIndicativaException` foi alterada para estender `RuntimeException`.
+O `throws` ainda presente em `Usuario.alugar()` serve como documentação, mas não é obrigatório para uma unchecked exception.
+No `GlobalExceptionHandler`, um `@ExceptionHandler` específico captura essa exceção e retorna o status HTTP 403.
+O corpo da resposta usa `e.getMessage()`, fazendo a mensagem com idade, título e classificação chegar ao cliente.
+
 ### 4. Sobrescrita vs sobrecarga (Aula 7)
 Um dos bugs compilava sem nenhum erro: o método da `Serie` parecia sobrescrever
 `calcularPrecoAluguel`, mas na verdade sobrecarregava. Explique a diferença entre
