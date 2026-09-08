@@ -121,6 +121,15 @@ propósito entre as duas nesse projeto e o que mudaria no código se o Document�
 passasse a ter promoções — quais classes/linhas seriam tocadas e quais ficariam
 intactas? O que isso diz sobre o design do sistema?
 
+`Conteudo` é uma classe abstrata porque reúne estado e comportamentos comuns de filme, série e documentário.
+Ela define uma base para essas subclasses, mas não representa um tipo de conteúdo que deve ser instanciado diretamente.
+`Promocionavel` é uma interface porque representa uma capacidade opcional: saber aplicar desconto sobre um preço.
+Se o documentário passasse a ter promoção, `Documentario` implementaria essa interface e definiria `aplicarPromocao()`.
+O método `Conteudo.calcularPrecoPromocional()` já reconheceria essa implementação, portanto não precisaria ser alterado.
+Controllers, repositories e `Usuario` também permaneceriam intactos, pois trabalham com o tipo geral `Conteudo`.
+Como o documentário atualmente é gratuito, um desconto de 20% sobre R$ 0,00 só teria efeito se seu preço-base também mudasse.
+Isso mostra um design extensível: uma nova capacidade pode ser adicionada com mudanças concentradas na classe interessada.
+
 ---
 
 
