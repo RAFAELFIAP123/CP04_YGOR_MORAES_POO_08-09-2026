@@ -130,6 +130,13 @@ Controllers, repositories e `Usuario` também permaneceriam intactos, pois traba
 Como o documentário atualmente é gratuito, um desconto de 20% sobre R$ 0,00 só teria efeito se seu preço-base também mudasse.
 Isso mostra um design extensível: uma nova capacidade pode ser adicionada com mudanças concentradas na classe interessada.
 
+
+---
+
+## Como reproduzir os testes
+
+O passo a passo completo, com configuração local do H2, comandos PowerShell, respostas esperadas e ordem dos cenários, está disponível em [docs/VALIDACAO_MANUAL.md](docs/VALIDACAO_MANUAL.md).
+
 ---
 
 ## Validação final do contrato
