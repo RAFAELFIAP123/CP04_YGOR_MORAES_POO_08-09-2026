@@ -11,18 +11,7 @@
 |Rafael Quatter Dalla Costa | RM562052| |
 |Rafael Louzã Lopes | RM564963| |
 
-
-| Campo | |
-|---|---|
-| **Total de bugs corrigidos** | ___ / 12 |
-| **Total de ajustes de Clean Code** | ___ / 6 |
-
----
-
 ## Parte 1 — Bugs encontrados
-
-> Uma linha por bug, na ordem em que você os encontrou. Use a numeração dos seus
-> commits (`fix: bug01 ...`). Preencha TODAS as colunas — metade da nota está aqui.
 
 | # | Sintoma observado (o que fiz/vi) | Causa raiz (arquivo e linha aproximada) | Correção aplicada | Conceito da disciplina |
 |---|---|---|---|---|
