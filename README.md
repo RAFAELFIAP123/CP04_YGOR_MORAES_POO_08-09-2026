@@ -22,7 +22,7 @@
 | bug03 | Uma série com 5 temporadas retornou R$ 9,90, em vez de R$ 24,50. | `Serie.java`: `calcularPrecoAluguel(double)` sobrecarregava o método, enquanto o aluguel chamava a versão sem argumentos herdada. | Removido o parâmetro e adicionada `@Override`, mantendo R$ 4,90 por temporada. | Polimorfismo, sobrescrita e sobrecarga de métodos. |
 | bug04 | Um documentário retornou preço de aluguel de R$ 9,90, embora o contrato determine gratuidade. | `Documentario.java`: a classe não sobrescrevia o cálculo e herdava o preço padrão de `Conteudo`. | Sobrescrito `calcularPrecoAluguel()` para retornar `0.0`. | Herança, polimorfismo e sobrescrita de método. |
 | bug05 | Ao cadastrar um usuário, o ID não era gerado automaticamente. | `Usuario.java`: o campo `id` possuía `@Id`, mas não tinha estratégia de geração configurada. | Adicionada `@GeneratedValue(strategy = GenerationType.IDENTITY)`. | Persistência JPA, chave primária e geração de identidade. |
-| bug06 | | | | |
+| bug06 | Um usuário criado com o nome Rafael retornou `nome=null`. | `Usuario.java`, construtor: `nome = nome` atribuía o parâmetro a ele mesmo. | Alterada a atribuição para `this.nome = nome`. | Construtores, estado do objeto e uso de `this`. |
 | bug07 | | | | |
 | bug08 | | | | |
 | bug09 | | | | |
