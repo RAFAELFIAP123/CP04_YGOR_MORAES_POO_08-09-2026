@@ -141,7 +141,7 @@ O passo a passo completo, com configuração local do H2, comandos PowerShell, r
 
 ## Validação final do contrato
 
-A aplicação foi executada localmente em 08/09/2026 com Java 21, Spring Boot 4.1.1 e banco H2 em memória. O bloco Oracle foi desativado apenas no ambiente local; o repositório permaneceu com os placeholders originais.
+A aplicação foi executada localmente com Java 21, Spring Boot 4.1.1 e banco H2 em memória. O bloco Oracle foi desativado apenas no ambiente local; o repositório permaneceu com os placeholders originais.
 
 | Cenário verificado | Resultado obtido | Status |
 |---|---|---|
