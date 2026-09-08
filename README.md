@@ -54,6 +54,14 @@ usa `ConteudoRepository`). Explique por que o Spring precisa gerenciar esses obj
 em vez de criarmos com `new ConteudoRepository()`. O que exatamente o Spring faz ao
 injetar um bean, e por que isso não funcionaria com um `new` comum?
 
+No código atual, o `ConteudoController` recebe o `ConteudoRepository` pelo construtor.
+Esse repository é uma interface, portanto nem seria possível criar sua instância diretamente com `new`.
+Ao iniciar a aplicação, o Spring Data JPA gera uma implementação dessa interface e registra esse objeto como bean.
+Depois, o Spring encontra o construtor do controller e injeta nele a instância gerenciada do repository.
+Essa implementação também recebe a infraestrutura necessária para acessar o banco, como o `EntityManager`.
+Se criássemos um objeto manualmente, ele ficaria fora do ciclo de vida e das configurações mantidas pelo Spring.
+A injeção pelo construtor ainda deixa a dependência explícita e facilita substituí-la em testes isolados.
+
 ### 2. JDBC vs Spring Data JPA (Aulas 12 e 13)
 Na Aula 12 escrevemos um `ProdutoDAO` na mão com `Connection`, `PreparedStatement` e
 `ResultSet`. Aqui o `ConteudoRepository` tem 2 linhas e faz CRUD completo. Compare as
