@@ -23,7 +23,7 @@
 | bug04 | Um documentário retornou preço de aluguel de R$ 9,90, embora o contrato determine gratuidade. | `Documentario.java`: a classe não sobrescrevia o cálculo e herdava o preço padrão de `Conteudo`. | Sobrescrito `calcularPrecoAluguel()` para retornar `0.0`. | Herança, polimorfismo e sobrescrita de método. |
 | bug05 | Ao cadastrar um usuário, o ID não era gerado automaticamente. | `Usuario.java`: o campo `id` possuía `@Id`, mas não tinha estratégia de geração configurada. | Adicionada `@GeneratedValue(strategy = GenerationType.IDENTITY)`. | Persistência JPA, chave primária e geração de identidade. |
 | bug06 | Um usuário criado com o nome Rafael retornou `nome=null`. | `Usuario.java`, construtor: `nome = nome` atribuía o parâmetro a ele mesmo. | Alterada a atribuição para `this.nome = nome`. | Construtores, estado do objeto e uso de `this`. |
-| bug07 | | | | |
+| bug07 | Filmes com duração `0` e `-20` foram criados normalmente. | `Conteudo.java`: construtor e setter não validavam `duracaoMinutos`. | Centralizada no setter a rejeição de valores `<= 0`; o construtor passou a usar o setter e a API retorna HTTP 400 com mensagem clara. | Encapsulamento, validação de estado e exceções. |
 | bug08 | | | | |
 | bug09 | | | | |
 | bug10 | | | | |
