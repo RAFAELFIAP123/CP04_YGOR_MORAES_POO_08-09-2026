@@ -96,10 +96,5 @@ intactas? O que isso diz sobre o design do sistema?
 
 ---
 
-## Parte 4 — Espaço livre (opcional)
-
-Alguma dificuldade, dúvida ou comentário sobre o checkpoint?
-
-```
 
 ```
