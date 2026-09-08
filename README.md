@@ -25,7 +25,7 @@
 | bug06 | Um usuário criado com o nome Rafael retornou `nome=null`. | `Usuario.java`, construtor: `nome = nome` atribuía o parâmetro a ele mesmo. | Alterada a atribuição para `this.nome = nome`. | Construtores, estado do objeto e uso de `this`. |
 | bug07 | Filmes com duração `0` e `-20` foram criados normalmente. | `Conteudo.java`: construtor e setter não validavam `duracaoMinutos`. | Centralizada no setter a rejeição de valores `<= 0`; o construtor passou a usar o setter e a API retorna HTTP 400 com mensagem clara. | Encapsulamento, validação de estado e exceções. |
 | bug08 | A busca pelo conteúdo 999 retornou `null`, como se fosse uma resposta válida. | `ConteudoController.java`: um `catch (Exception)` vazio engolia `ConteudoNaoEncontradoException`. | Removido o `try/catch` vazio e a exceção passou a ser propagada ao handler global, que responde HTTP 404. | Exceções, propagação de erros e responsabilidade do controller. |
-| bug09 | | | | |
+| bug09 | Um conteúdo com categoria `FICCAO` não foi retornado ao buscar pelo mesmo texto. | `ConteudoController.java`: categorias eram comparadas com `==`, que compara referências de objetos. | Substituída a condição por `categoria.equals(c.getCategoria())`. | Comparação de objetos, igualdade de Strings e coleções. |
 | bug10 | | | | |
 | bug11 | | | | |
 | bug12 | | | | |
