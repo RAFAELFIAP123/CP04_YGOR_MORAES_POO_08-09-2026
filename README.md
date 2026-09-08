@@ -106,6 +106,15 @@ nulos). Em quais lugares (construtor, setter, método do model) cada tipo de val
 deve ficar? Justifique usando os bugs que você encontrou e explique por que validar só
 em um lugar não foi suficiente.
 
+Valores que nunca podem ser inválidos devem ser protegidos dentro do próprio model, próximo ao atributo.
+Em `Conteudo`, a duração é validada no setter, e o construtor chama esse setter para não duplicar a regra.
+Assim, valores iguais ou menores que zero são rejeitados tanto na criação quanto em alterações posteriores.
+Os créditos deveriam seguir o mesmo padrão em `Usuario`, pois o setter atual ainda permitiria atribuir um valor negativo.
+Já disponibilidade, idade mínima e saldo suficiente dependem do aluguel e pertencem ao método `Usuario.alugar()`.
+Campos obrigatórios, como nome e título, podem ser verificados na entrada da API e novamente no model para preservar seu estado.
+Validar apenas no construtor não cobre alterações por setters, enquanto validar só no controller não cobre testes ou chamadas internas.
+A combinação dessas camadas impede objetos inválidos e ainda permite que a API devolva mensagens claras ao cliente.
+
 ### 6. Abstração e interface (Aulas 8 e 9)
 `Conteudo` é abstrata e `Promocionavel` é uma interface. Explique a diferença de
 propósito entre as duas nesse projeto e o que mudaria no código se o Documentário
