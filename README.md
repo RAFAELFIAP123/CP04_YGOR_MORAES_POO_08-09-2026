@@ -130,3 +130,23 @@ Controllers, repositories e `Usuario` também permaneceriam intactos, pois traba
 Como o documentário atualmente é gratuito, um desconto de 20% sobre R$ 0,00 só teria efeito se seu preço-base também mudasse.
 Isso mostra um design extensível: uma nova capacidade pode ser adicionada com mudanças concentradas na classe interessada.
 
+---
+
+## Validação final do contrato
+
+A aplicação foi executada localmente em 08/09/2026 com Java 21, Spring Boot 4.1.1 e banco H2 em memória. O bloco Oracle foi desativado apenas no ambiente local; o repositório permaneceu com os placeholders originais.
+
+| Cenário verificado | Resultado obtido | Status |
+|---|---|---|
+| Inicialização da aplicação | Tomcat iniciado na porta 8080 e duas interfaces JPA carregadas | Aprovado |
+| Cadastro com duração igual a zero | HTTP 400 e mensagem `A duração deve ser maior que zero` | Aprovado |
+| Filme de estreia | Preço promocional de R$ 11,92 | Aprovado |
+| Série com cinco temporadas | Dados herdados preservados e preço promocional de R$ 19,60 | Aprovado |
+| Documentário | Preço de R$ 0,00 e sem aplicação de desconto | Aprovado |
+| Busca pela categoria `FICCAO` | Retornou somente Matrix e Dark | Aprovado |
+| Cadastro de usuários | IDs gerados e nomes, idades e créditos preservados | Aprovado |
+| Conteúdo indisponível | HTTP 409, mensagem clara e nenhum débito | Aprovado |
+| Classificação indicativa | HTTP 403, mensagem clara e nenhum débito | Aprovado |
+| Créditos insuficientes | HTTP 422, mensagem clara e saldo preservado | Aprovado |
+| Aluguel válido | Débito de R$ 14,90, saldo final de R$ 85,10 e conteúdo indisponível | Aprovado |
+| Conteúdo inexistente | HTTP 404 e mensagem `Conteúdo não encontrado: 999` | Aprovado |
