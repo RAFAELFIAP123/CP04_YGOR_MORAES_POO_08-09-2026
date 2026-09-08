@@ -65,6 +65,14 @@ Na Aula 12 escrevemos um `ProdutoDAO` na mão com `Connection`, `PreparedStateme
 duas abordagens: o que o Spring Data JPA automatiza, o que o JDBC/DAO ainda resolve
 melhor, e como o `findByCategoria` consegue funcionar sem implementação.
 
+No JDBC, nós escrevemos o SQL e controlamos manualmente a conexão, os parâmetros e a leitura do `ResultSet`.
+Também precisamos converter cada linha retornada em objeto e garantir o fechamento correto dos recursos.
+No projeto, `ConteudoRepository` herda de `JpaRepository`, que já fornece operações como `save`, `findAll` e `findById`.
+O JPA ainda faz o mapeamento entre as entidades Java e as tabelas, reduzindo bastante o código repetitivo.
+O JDBC ou um DAO próprio pode ser melhor quando precisamos de SQL muito específico, otimizações ou consultas complexas.
+O método `findByCategoria` funciona porque o Spring Data interpreta seu nome e gera a consulta usando o atributo `categoria`.
+Assim, o controller consulta diretamente por categoria sem conhecer SQL nem executar uma filtragem manual.
+
 ### 3. Exceções checked vs unchecked (Aula 11)
 A `ClassificacaoIndicativaException` estourava como um erro genérico do servidor,
 sem mensagem útil para o cliente. Explique a diferença entre `extends Exception` e
