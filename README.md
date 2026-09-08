@@ -39,7 +39,7 @@
 | clean03 | Método `Usuario.alugar()` | Os nomes `c` e `p` não comunicavam o papel das variáveis na regra de aluguel. | Renomeados para `conteudo` e `precoAluguel`, preservando todo o comportamento. |
 | clean04 | `ConteudoController.listarPorCategoria()` | O controller buscava todos os registros e executava uma filtragem manual, duplicando uma responsabilidade do repository. | A consulta passou a chamar diretamente `conteudoRepository.findByCategoria(categoria)`. |
 | clean05 | Método privado `calcularDescontoAntigo()` em `ConteudoController` | O método não possuía chamadas e mantinha uma regra antiga fora do contrato atual. | Removidos o método morto e seu comentário explicativo. |
-| clean06 | | | |
+| clean06 | Final de `ConteudoController` | Um bloco de cupom permanecia comentado como possível código futuro, gerando ruído e referências inexistentes. | Removidos o TODO e o código comentado; uma futura regra de cupons deverá ser implementada e versionada quando definida. |
 
 ---
 

@@ -73,9 +73,4 @@ public class ConteudoController {
         return ResponseEntity.status(201).body(conteudoRepository.save(novo));
     }
 
-    // TODO: reativar quando confirmarem a regra de cupons (não apagar, pode ser útil)
-    // if (usuario.temCupomAtivo()) {
-    //     preco = preco - 5.0;
-    //     aplicarPromocao();
-    // }
 }
